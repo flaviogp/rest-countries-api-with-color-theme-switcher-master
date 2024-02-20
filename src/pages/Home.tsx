@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { Countries } from "../utils/types";
 import Search from "../components/Search";
+import Filter from "../components/Filter";
 
 const Home = () => {
     const [data, setData] = useState<Countries[] | null>(null);
@@ -23,6 +24,7 @@ const Home = () => {
   return (
     <main className='container p-4'>
         <Search />
+        <Filter />
         {data && data.map(item => <img src={item.flags.png} /> )}
     </main>
   )

@@ -11,7 +11,7 @@ export default {
         "darkGray": "hsl(0, 0%, 52%)", //(Light Mode Input)
         "veryLightGray": "hsl(0, 0%, 98%)", //(Light Mode Background)
         "white": "hsl(0, 0%, 100%)", //(Dark Mode Text & Light Mode Elements)
-      }
+      },
     },
   },
   plugins: [],
