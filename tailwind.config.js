@@ -12,6 +12,9 @@ export default {
         "veryLightGray": "hsl(0, 0%, 98%)", //(Light Mode Background)
         "white": "hsl(0, 0%, 100%)", //(Dark Mode Text & Light Mode Elements)
       },
+      boxShadow: {
+        "shadowButton": "0 0 7px -3px"
+      }
     },
   },
   plugins: [],

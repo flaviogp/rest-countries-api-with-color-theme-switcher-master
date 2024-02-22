@@ -8,9 +8,10 @@ type CardProps = {
 const Card = ({country}:CardProps) => {
   return (
     <Link to={{
-            pathname: '/country',
-            search: `?name=${country.name}`
+            pathname: `/country/${country.name.common}`,
+
         }}
+        //             search: `?name=${country.name.common}`
         className="
             w-[90%] bg-white flex flex-col self-center 
             mb-8 rounded-md shadow-md cursor-pointer no-underline

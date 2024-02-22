@@ -13,6 +13,7 @@ const Home = () => {
           const fetchData = await fetch('https://restcountries.com/v3.1/all');
           const data = await fetchData.json();
           setData(data);
+          localStorage.setItem('data', JSON.stringify(data));
         }catch(err){
           alert(err)
         }
