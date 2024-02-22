@@ -1,10 +1,13 @@
 import { useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {faAngleDown, faAngleUp} from '@fortawesome/free-solid-svg-icons'
+import FilterList from "./FilterList"
 
 const Filter = () => {
     const [value, setValue] = useState('Filter by region...')
     const [select, setSelect] = useState(false)
+
+    const list = ['All', 'Africa', 'America', 'Asia', 'Europe', 'Oceania'];
 
     const handleActiveSelector = () => {
         setSelect(!select);
@@ -17,9 +20,7 @@ const Filter = () => {
         setSelect(!select);
     }
 
-    const selectStyles = `
-        h-[185px] p-4
-    `
+
   return (
     <div
         className="
@@ -44,22 +45,7 @@ const Filter = () => {
             />
             <FontAwesomeIcon icon={select ? faAngleUp : faAngleDown} />
         </div>
-
-        <div 
-            className={`
-                w-full h-0 flex flex-col gap-4
-                bg-white absolute top-[115%]
-                shadow-md overflow-hidden
-                my-transition [&>*]:cursor-pointer
-                ${ select && selectStyles}
-            `}
-        >
-            <p onClick={(e) => handleSelectOption(e)}>Africa</p>
-            <p onClick={(e) => handleSelectOption(e)}>America</p>
-            <p onClick={(e) => handleSelectOption(e)}>Asia</p>
-            <p onClick={(e) => handleSelectOption(e)}>Europe</p>
-            <p onClick={(e) => handleSelectOption(e)}>Oceania</p>
-        </div>
+        <FilterList handleSelectOption={handleSelectOption} list={list} select={select}/>
     </div>
 
   )

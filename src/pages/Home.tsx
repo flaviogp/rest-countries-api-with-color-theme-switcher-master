@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { Countries } from "../utils/types";
 import Search from "../components/Search";
 import Filter from "../components/Filter";
+import Card from "../components/Card";
 
 const Home = () => {
     const [data, setData] = useState<Countries[] | null>(null);
@@ -22,10 +23,10 @@ const Home = () => {
     }, [])
 
   return (
-    <main className='container p-4'>
+    <main className='container p-4 flex flex-col'>
         <Search />
         <Filter />
-        {data && data.map(item => <img src={item.flags.png} /> )}
+        {data && data.map(country => <Card country={country}/> )}
     </main>
   )
 }
