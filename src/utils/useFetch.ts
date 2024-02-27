@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 export function useFetch<T = unknown>(urlString: string) {
     const [data, setData] = useState<T | null>(null);
+    const [singleData, setSingleData] = useState<T | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<Error | null>(null)
 
@@ -13,10 +14,16 @@ export function useFetch<T = unknown>(urlString: string) {
             .then(res => {
                 setData(res)
                 setLoading(false);
+                setSingleData(data[0])
             })
             .catch(err => setError(err))
             .finally(() => setLoading(false))
     });
 
-    return { data, loading, error }
+    return {
+        data,
+        loading,
+        error,
+        singleData
+    }
 }
