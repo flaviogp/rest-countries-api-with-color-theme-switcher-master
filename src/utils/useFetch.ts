@@ -14,7 +14,7 @@ export function useFetch<T = unknown>(urlString: string) {
             .then(res => {
                 setData(res)
                 setLoading(false);
-                setSingleData(data[0])
+                setSingleData(res[0])
             })
             .catch(err => setError(err))
             .finally(() => setLoading(false))
