@@ -12,7 +12,7 @@ type Name = {
 }
 
 type Currencies = {
-    EUR: {
+    [key: string]: {
         name: string,
         symbol: string
     }
@@ -25,8 +25,7 @@ type Idd = {
 }
 
 type Languages = {
-    ell: string,
-    tur: string
+    [key: string]: string,
 }
 
 
@@ -104,6 +103,7 @@ export type Countries = {
     translation: Translations;
     latlng: number[];
     landlocked: boolean;
+    borders: string[];
     area: number;
     demonyms: Denonym;
     flag: string;
