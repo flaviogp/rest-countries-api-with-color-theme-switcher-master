@@ -1,7 +1,19 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {faSearch} from '@fortawesome/free-solid-svg-icons'
+import { SearchParam } from "../pages/Home"
 
-const Search = () => {
+type SearchProps = {
+  handleSetFilter: (param: SearchParam ,arg:string) => void
+}
+
+const Search = ({handleSetFilter}: SearchProps) => {
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if(e.key !== 'Enter') return;
+
+    handleSetFilter('country', e.currentTarget.value)
+  }
+
   return (
     <label htmlFor="search" className="w-full bg-white flex gap-5 mb-7 p-5">
         <FontAwesomeIcon icon={faSearch} />
@@ -11,7 +23,7 @@ const Search = () => {
             name='search'
             placeholder="Search for a country..."
             className="outline-none border-none "
-
+          onKeyDown={e => handleKeyDown(e)}
         />
     </label>
   )

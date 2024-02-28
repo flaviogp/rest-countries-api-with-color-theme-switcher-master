@@ -2,8 +2,11 @@ import { useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {faAngleDown, faAngleUp} from '@fortawesome/free-solid-svg-icons'
 import FilterList from "./FilterList"
+import { SearchParam } from "../pages/Home"
 
-type FilterProps = {handleSetFilter: (arg:string) => void}
+type FilterProps = {
+    handleSetFilter: (param: SearchParam ,arg:string) => void
+}
 
 const Filter = ({handleSetFilter}: FilterProps) => {
     const [value, setValue] = useState('Filter by region...')
@@ -19,7 +22,7 @@ const Filter = ({handleSetFilter}: FilterProps) => {
         
         setValue(item)
         setSelect(!select);
-        handleSetFilter(item)
+        handleSetFilter( 'region' ,item)
     }
 
 
