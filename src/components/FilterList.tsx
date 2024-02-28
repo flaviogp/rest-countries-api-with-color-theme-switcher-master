@@ -3,13 +3,13 @@
 type FilterListProps = {
     select: boolean
     list: string[]
-    handleSelectOption: (e: React.MouseEvent<HTMLParagraphElement, MouseEvent>) => void
+    handleSelectOption: (arg: string) => void
 }
 
 const FilterList = ({handleSelectOption, list, select}: FilterListProps) => {
 
 const selectStyles = `
-    h-[185px] p-4
+    h-[215px] p-4
 `
   return (
     <div 
@@ -21,7 +21,16 @@ const selectStyles = `
         ${ select && selectStyles}
     `}
 >
-    {list.map((item, index) => <p onClick={(e) => handleSelectOption(e)} key={`${item}+${index}`}>{item}</p>)}
+    {list.map((item, index) =>(
+            <p 
+                onClick={() => handleSelectOption(item)} 
+                key={`${item}+${index}`}
+                className="capitalize"    
+            >
+                {item}
+            </p>
+        )
+    )}
 </div>
   )
 }

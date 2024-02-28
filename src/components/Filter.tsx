@@ -3,21 +3,23 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {faAngleDown, faAngleUp} from '@fortawesome/free-solid-svg-icons'
 import FilterList from "./FilterList"
 
-const Filter = () => {
+type FilterProps = {handleSetFilter: (arg:string) => void}
+
+const Filter = ({handleSetFilter}: FilterProps) => {
     const [value, setValue] = useState('Filter by region...')
     const [select, setSelect] = useState(false)
 
-    const list = ['All', 'Africa', 'America', 'Asia', 'Europe', 'Oceania'];
+    const list = ['all', 'africa', 'americas', 'asia', 'europe', 'oceania'];
 
     const handleActiveSelector = () => {
         setSelect(!select);
     }
     
-    const handleSelectOption = (e: React.MouseEvent<HTMLParagraphElement, MouseEvent>) => {
-        const selectValue = e.currentTarget.innerText;
+    const handleSelectOption = (item: string) => {
         
-        setValue(selectValue)
+        setValue(item)
         setSelect(!select);
+        handleSetFilter(item)
     }
 
 
@@ -41,7 +43,7 @@ const Filter = () => {
             type="text"
             placeholder={value}
             readOnly
-            className="border-none outline-none max-w-[120px] cursor-pointer"
+            className="capitalize border-none outline-none max-w-[120px] cursor-pointer"
             />
             <FontAwesomeIcon icon={select ? faAngleUp : faAngleDown} />
         </div>
