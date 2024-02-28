@@ -1,18 +1,35 @@
+// import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { Countries } from "../utils/types"
 import BackButton from "../components/BackButton"
+import { useFetch } from "../utils/useFetch"
+import Banner from "../components/Banner"
+import CountryInfo from "../components/CountryInfo"
+import Borders from "../components/Borders"
+
 
 const Country = () => {
     const {name} = useParams()
-    const data = JSON.parse(localStorage.getItem('data') as string) as Countries[]
-    const country = data.find(country => country.name.common === name)
-    if(!country) return;
-  return (
-    <main className='container p-4 flex flex-col'>
-      <BackButton />
-       <p> Country: {country.name.common}</p>
 
-    </main>
+    const {singleData, loading, error} = useFetch<Countries>(`name/${name}`);
+
+
+    // console.log(singleData && singleData.name, error)
+    return (
+      <main className='container p-5 flex flex-col gap-10'>
+      {
+        singleData && (
+          <>
+            <BackButton />
+            <Banner data={singleData} />
+            <div>
+              <CountryInfo  data={singleData}/>
+              <Borders data={singleData}/>
+            </div>
+          </>
+        )
+      }
+  </main>
   )
 }
 

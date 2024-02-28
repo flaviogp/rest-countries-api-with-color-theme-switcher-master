@@ -6,8 +6,8 @@ type BannerProps = {
 
 const Banner = ({data}: BannerProps) => {
   return (
-    <div>
-        <img src={data.flags.svg} alt={data.flags.alt} />
+    <div className='w-full'>
+        <img src={data.flags.svg} alt={data.flags.alt} className="w-full h-full" />
     </div>
   )
 }

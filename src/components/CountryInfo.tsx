@@ -8,9 +8,15 @@ const CountryInfo = ({ data }: CountryInfoProps) => {
 
     const countryCurrency = data && data.currencies[Object.keys(data.currencies)[0]].name;
     const countryLanguages = data && Object.keys(data.languages)
-    
+
     return (
-        <div>
+        <div 
+            className="
+                flex flex-col gap-6 leading-10
+                [&>*>p]:font-bold [&>*>p>span]:font-light
+                capitalize
+                mb-10
+            ">
             <h1>{data.name.official}</h1>
             <div>
                 <p>Native Name: <span>{data.name.official}</span></p>

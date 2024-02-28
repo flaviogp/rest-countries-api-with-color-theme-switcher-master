@@ -21,7 +21,7 @@ const selectStyles = `
         ${ select && selectStyles}
     `}
 >
-    {list.map(item => <p onClick={(e) => handleSelectOption(e)}>{item}</p>)}
+    {list.map((item, index) => <p onClick={(e) => handleSelectOption(e)} key={`${item}+${index}`}>{item}</p>)}
 </div>
   )
 }
