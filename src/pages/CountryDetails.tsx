@@ -6,6 +6,7 @@ import { useFetch } from "../hooks/useFetch"
 import Banner from "../components/Banner"
 import CountryInfo from "../components/CountryInfo"
 import Borders from "../components/Borders"
+import Loading from "../components/Loading"
 
 
 const Country = () => {
@@ -18,6 +19,9 @@ const Country = () => {
     return (
       <main className='container p-5 flex flex-col gap-10'>
       {
+
+        loading ? < Loading/> :
+
         singleData && (
           <>
             <BackButton />
