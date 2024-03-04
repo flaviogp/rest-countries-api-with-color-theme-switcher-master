@@ -5,6 +5,7 @@ import Filter from "../components/Filter";
 import Card from "../components/Card";
 import { useFetch } from "../hooks/useFetch";
 import { useState } from "react";
+import Countrylist from "../components/CountryList";
 
 export type SearchParam = 'country' | 'region';
 
@@ -24,8 +25,7 @@ const Home = () => {
     <main className='container p-4 flex flex-col'>
         <Search handleSetFilter={handleSetFilter}/>
         <Filter handleSetFilter={handleSetFilter}/>
-        <div>{loading && 'loading...'}</div>
-        {data && data.map(country => <Card key={country.cca2} country={country} /> )}
+        <Countrylist data={data} loading={loading}/>
     </main>
   )
 }
