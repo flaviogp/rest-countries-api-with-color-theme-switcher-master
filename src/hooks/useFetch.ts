@@ -18,7 +18,7 @@ export function useFetch<T = unknown>(urlString: string) {
             })
             .catch(err => setError(err))
             .finally(() => setLoading(false))
-    });
+    }, [urlString]);
 
     return {
         data,

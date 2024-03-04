@@ -3,7 +3,7 @@ import { Countries } from "../utils/types";
 import Search from "../components/Search";
 import Filter from "../components/Filter";
 import Card from "../components/Card";
-import { useFetch } from "../utils/useFetch";
+import { useFetch } from "../hooks/useFetch";
 import { useState } from "react";
 
 export type SearchParam = 'country' | 'region';

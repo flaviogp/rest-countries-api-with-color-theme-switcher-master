@@ -2,7 +2,7 @@
 import { useParams } from "react-router-dom"
 import { Countries } from "../utils/types"
 import BackButton from "../components/BackButton"
-import { useFetch } from "../utils/useFetch"
+import { useFetch } from "../hooks/useFetch"
 import Banner from "../components/Banner"
 import CountryInfo from "../components/CountryInfo"
 import Borders from "../components/Borders"
