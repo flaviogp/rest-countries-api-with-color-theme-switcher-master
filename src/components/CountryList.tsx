@@ -1,4 +1,3 @@
-import React from 'react'
 import Card from './Card'
 import { Countries } from '../utils/types'
 import Loading from './Loading';

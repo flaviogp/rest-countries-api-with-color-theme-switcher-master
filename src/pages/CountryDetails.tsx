@@ -1,4 +1,3 @@
-// import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { Countries } from "../utils/types"
 import BackButton from "../components/BackButton"
@@ -12,10 +11,7 @@ import Loading from "../components/Loading"
 const Country = () => {
     const {name} = useParams()
 
-    const {singleData, loading, error} = useFetch<Countries>(`name/${name}`);
-
-
-    // console.log(singleData && singleData.name, error)
+    const {singleData, loading} = useFetch<Countries>(`name/${name}`);
     return (
       <main className='container p-5 flex flex-col gap-10'>
       {
