@@ -1,10 +1,9 @@
 // import { useEffect, useState } from "react"
 import { Countries } from "../utils/types";
-import Search from "../components/Search";
-import Filter from "../components/Filter";
 import { useFetch } from "../hooks/useFetch";
 import { useState } from "react";
 import Countrylist from "../components/CountryList";
+import SearchSection from "../components/SearchSection";
 
 export type SearchParam = 'country' | 'region';
 
@@ -22,8 +21,7 @@ const Home = () => {
 
   return (
     <main className='container p-4 flex flex-col'>
-        <Search handleSetFilter={handleSetFilter}/>
-        <Filter handleSetFilter={handleSetFilter}/>
+        <SearchSection handleSetFilter={handleSetFilter} />
         <Countrylist data={data} loading={loading}/>
     </main>
   )

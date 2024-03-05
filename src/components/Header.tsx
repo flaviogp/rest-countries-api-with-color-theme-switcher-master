@@ -11,8 +11,8 @@ const Header = () => {
   return (
     <header 
       className="
-        container flex justify-between items-center 
-        text-veryDarkBlueLM p-4 py-8 bg-white shadow-md"
+        w-full flex justify-between items-center 
+        text-veryDarkBlueLM p-8 bg-white shadow-md"
         >
         <strong>Where in the world?</strong>
         <div className="flex gap-4 items-center">

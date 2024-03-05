@@ -21,11 +21,13 @@ const Country = () => {
         singleData && (
           <>
             <BackButton />
-            <Banner data={singleData} />
-            <div>
-              <CountryInfo  data={singleData}/>
-              <Borders data={singleData}/>
-            </div>
+            <section className="flex flex-col gap-10 lg:gap-16 lg:flex-row">
+              <Banner data={singleData} />
+              <div className="lg:w-[50%]">
+                <CountryInfo  data={singleData}/>
+                <Borders data={singleData}/>
+              </div>
+            </section>
           </>
         )
       }

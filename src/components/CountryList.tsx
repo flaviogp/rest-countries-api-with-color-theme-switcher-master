@@ -9,16 +9,20 @@ type CountryListProps = {
 
 const Countrylist = ({data, loading}: CountryListProps) => {
   return (
-    <>
-    {
-        loading ?
-            <Loading />
-        :
-            <div>
-                {data && data.map(country => <Card key={country.cca2} country={country} /> )}
-            </div>
-    }
-    </>
+    <section className='w-full'>
+      {
+          loading ?
+              <Loading />
+          :
+              <div 
+                className=' 
+                  w-full flex flex-col items-center gap-8
+                  md:flex-row md:flex-wrap md:gap-x-0 md:justify-between
+                '>
+                  {data && data.map(country => <Card key={country.cca2} country={country} /> )}
+              </div>
+      }
+    </section>
   )
 }
 

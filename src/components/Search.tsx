@@ -15,7 +15,7 @@ const Search = ({handleSetFilter}: SearchProps) => {
   }
 
   return (
-    <label htmlFor="search" className="w-full bg-white flex gap-5 mb-7 p-5">
+    <label htmlFor="search" className=" w-full md:w-[450px] rounded-md bg-white flex gap-5 mb-7 p-5">
         <FontAwesomeIcon icon={faSearch} />
         <input 
             type="text" 
