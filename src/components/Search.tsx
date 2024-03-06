@@ -15,14 +15,21 @@ const Search = ({handleSetFilter}: SearchProps) => {
   }
 
   return (
-    <label htmlFor="search" className=" w-full md:w-[450px] rounded-md bg-white flex gap-5 mb-7 p-5">
+    <label htmlFor="search" 
+      className=" 
+        w-full h-12 max-w-[450px] mb-8 md:m-0 rounded-md 
+        bg-white text-darkBlue shadow-shadowButton flex gap-5 p-4 
+        dark:bg-darkBlue dark:text-white
+
+      "
+    >
         <FontAwesomeIcon icon={faSearch} />
         <input 
             type="text" 
             id='search' 
             name='search'
             placeholder="Search for a country..."
-            className="outline-none border-none "
+            className="outline-none border-none h-full bg-inherit text-inherit dark:placeholder-white"
           onKeyDown={e => handleKeyDown(e)}
         />
     </label>

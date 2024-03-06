@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 
 export default {
+  darkMode: 'selector',
   content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
   theme: {
     extend: {
@@ -13,7 +14,7 @@ export default {
         "white": "hsl(0, 0%, 100%)", //(Dark Mode Text & Light Mode Elements)
       },
       boxShadow: {
-        "shadowButton": "0 0 7px -3px"
+        "shadowButton": "0 0 7px -3px black"
       }
     },
   },

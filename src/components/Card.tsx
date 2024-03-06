@@ -13,7 +13,8 @@ const Card = ({country}:CardProps) => {
         }}
         className="
             w-[300px] h-[400px] bg-white flex flex-col
-            rounded-md shadow-md cursor-pointer no-underline
+            rounded-md shadow-shadowButton cursor-pointer no-underline
+            dark:bg-darkBlue [&>*>*]:dark:text-white
         "
     >
         <div className='w-full h-[160px]'>

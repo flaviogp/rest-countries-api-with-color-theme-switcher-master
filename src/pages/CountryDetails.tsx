@@ -13,7 +13,11 @@ const Country = () => {
 
     const {singleData, loading} = useFetch<Countries>(`name/${name}`);
     return (
-      <main className='container p-5 flex flex-col gap-10'>
+      <main 
+        className='
+          container p-5 flex flex-col gap-10 
+          [&>*]:dark:text-white
+        '>
       {
 
         loading ? < Loading/> :

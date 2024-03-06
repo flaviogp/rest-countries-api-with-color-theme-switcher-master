@@ -23,7 +23,11 @@ const BorderLink = ({ code }: BorderLinkProps) => {
             to={{
                 pathname: `/country/${country}`
             }}
-            className='no-underline p-2 px-5 rounded-md shadow-shadowButton shadow-veryDarkBlueLM text-veryDarkBlueLM'
+            className='
+                no-underline p-2 px-5 rounded-md 
+                shadow-shadowButton text-veryDarkBlueLM
+                dark:text-white
+                '
         >
             {country}
         </Link>

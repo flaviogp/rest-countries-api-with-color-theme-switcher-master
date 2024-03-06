@@ -31,22 +31,26 @@ const Filter = ({handleSetFilter}: FilterProps) => {
         className="
             flex flex-col items-center justify-center
             w-[230px] mb-8 relative
+            [&>*]:dark:bg-darkBlue [&>*]:dark:text-white
+            [&>*>*]:dark:bg-darkBlue [&>*>*]:dark:text-white
         "
     >
         <div 
             className="
                 cursor-pointer bg-white 
                 flex items-center justify-center gap-4 
-                p-4 w-full rounded-sm shadow-md
-
+                p-4 w-full rounded-sm shadow-shadowButton  
             "
             onClick={() => handleActiveSelector()}
         >
             <input 
-            type="text"
-            placeholder={value}
-            readOnly
-            className="capitalize border-none outline-none max-w-[120px] cursor-pointer"
+                type="text"
+                placeholder={value}
+                readOnly
+                className="
+                    capitalize border-none outline-none max-w-[120px] 
+                    cursor-pointer dark:placeholder-white
+                "
             />
             <FontAwesomeIcon icon={select ? faAngleUp : faAngleDown} />
         </div>
