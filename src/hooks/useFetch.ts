@@ -13,10 +13,12 @@ export function useFetch<T = unknown>(urlString: string) {
             .then(res => res.json())
             .then(res => {
                 setData(res)
-                setLoading(false);
                 setSingleData(res[0])
             })
-            .catch(err => setError(err))
+            .catch(err => {
+                setError(err)
+                console.log('err:' + err)
+            })
             .finally(() => setLoading(false))
     }, [urlString]);
 

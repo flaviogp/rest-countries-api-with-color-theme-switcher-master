@@ -14,13 +14,14 @@ const Card = ({country}:CardProps) => {
         className="
             w-[300px] h-[400px] bg-white flex flex-col
             rounded-md shadow-shadowButton cursor-pointer no-underline
+            hover:bg-darkBlue hover:bg-opacity-5
             dark:bg-darkBlue [&>*>*]:dark:text-white
         "
     >
         <div className='w-full h-[160px]'>
             <img 
                 src={country.flags.svg} 
-                alt={country.flags.alt} 
+                alt={country.flags.alt || `Flag of ${country.name.common}`} 
                 style={{ objectFit: "cover" }}
                 className=" w-full h-full rounded-t-md shadow-sm"
                 />

@@ -4,7 +4,6 @@ import { useFetch } from "../hooks/useFetch";
 import { useState } from "react";
 import Countrylist from "../components/CountryList";
 import SearchSection from "../components/SearchSection";
-
 export type SearchParam = 'country' | 'region';
 
 const Home = () => {
